@@ -1,0 +1,59 @@
+{
+    "name": "linkrobins/op",
+    "description": "Adds an OP label next to the original poster's name on their posts in a discussion.",
+    "type": "flarum-extension",
+    "homepage": "https://linkrobins.com/extensions/op",
+    "support": {
+        "issues": "https://github.com/linkrobins/OP/issues",
+        "source": "https://github.com/linkrobins/OP"
+    },
+    "keywords": [
+        "discussion",
+        "op",
+        "label"
+    ],
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^2.0",
+        "php": "^8.3"
+    },
+    "authors": [
+        {
+            "name": "Link Robins",
+            "email": "karl@linkrobins.com"
+        }
+    ],
+    "extra": {
+        "flarum-extension": {
+            "title": "LR OP",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-crown",
+                "backgroundColor": "#1a2535",
+                "color": "#07adcc"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "githubActions": true
+            }
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "require-dev": {
+        "flarum/testing": "^2.0"
+    },
+    "scripts": {
+        "test": [
+            "@test:integration"
+        ],
+        "test:integration": "phpunit -c tests/phpunit.integration.xml",
+        "test:setup": "@php tests/integration/setup.php"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LinkRobins\\Op\\Tests\\": "tests/"
+        }
+    }
+}
